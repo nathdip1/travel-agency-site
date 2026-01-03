@@ -305,32 +305,50 @@ body, h1, h2, h3, p, a, button, input {
   font-family: 'Merriweather', 'Georgia', serif;
 }
 
-/* Past Trips Gallery */
-.past-trips {
-  background-color: #f0ebe3;
-  padding: 24px 16px;
-}
+/* =========================
+   TRUE INFINITE AUTO-SCROLL GALLERY
+   ========================= */
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 16px;
-}
-
-.gallery img {
+.gallery-wrapper {
+  overflow: hidden;
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  background-color: #f0ebe3;
+  padding: 12px 0;
 }
 
-@media (min-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
+.gallery-track {
+  display: flex;
+  width: max-content;
+  animation: galleryScroll 35s linear infinite;
+}
+
+/* Pause animation on interaction */
+.gallery-track:hover,
+.gallery-track:active {
+  animation-play-state: paused;
+}
+
+.gallery-track img {
+  height: 140px;
+  width: auto;
+  margin-right: 14px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+/* True infinite scroll animation */
+@keyframes galleryScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
   }
 }
+
+
 
 /* Floating Contact Buttons */
 .floating-btn {
