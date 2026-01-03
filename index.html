@@ -4,15 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yatra With Mohit</title>
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+  <!-- Site Header -->
   <h1>Yatra With Mohit</h1>
 
   <!-- Upcoming Trips Section -->
   <section id="trips-section">
     <h2>Upcoming Trips</h2>
+
     <div id="trips-container">
       <p>Loading trips...</p>
     </div>
@@ -23,22 +28,8 @@
     <p id="no-trips-message"></p>
   </section>
 
+  <!-- Main Script -->
   <script src="main.js"></script>
 
-  <!-- Inquiry Form Template -->
-<template id="inquiry-form-template">
-  <div class="inquiry-form">
-    <p><strong>Trip:</strong> <span class="trip-name"></span></p>
-    <p><strong>Price:</strong> ₹<span class="trip-price"></span></p>
-
-    <input type="text" placeholder="Your Name" required />
-    <input type="tel" placeholder="Mobile Number" required />
-    <input type="text" placeholder="Area / District" required />
-
-    <button class="submit-inquiry-btn">Submit Inquiry</button>
-  </div>
-</template>
-
 </body>
-
 </html>
