@@ -1,6 +1,6 @@
 {
   "TRIPS_API_URL": "https://script.google.com/macros/s/AKfycbzQJrtigN9fyOyQUIYGFlGNys-FS3kL2Y0as4pBW01u-z48TE63thKcBQubkjkh2-66/exec?sheet=Upcoming_Trips",
   "SITE_SETTINGS_API_URL": "https://script.google.com/macros/s/AKfycbzQJrtigN9fyOyQUIYGFlGNys-FS3kL2Y0as4pBW01u-z48TE63thKcBQubkjkh2-66/exec?sheet=Site_Settings",
-  "INQUIRY_FORM_URL": "",
+  "INQUIRY_FORM_URL": "https://script.google.com/macros/s/AKfycbzQJrtigN9fyOyQUIYGFlGNys-FS3kL2Y0as4pBW01u-z48TE63thKcBQubkjkh2-66/exec",
   "POLL_FORM_URL": ""
 }
