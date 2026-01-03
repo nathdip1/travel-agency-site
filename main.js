@@ -42,9 +42,49 @@
         <p class="base-price">Price: ₹${trip.Base_Price}</p>
         ${offerHtml}
         <p>${trip.Notes || ''}</p>
+
+        <button class="inquiry-btn">
+          Inquiry Now
+        </button>
       `;
 
       tripsContainer.appendChild(card);
+
+      // ===== INQUIRY BUTTON LOGIC =====
+      const inquiryBtn = card.querySelector('.inquiry-btn');
+
+      inquiryBtn.addEventListener('click', () => {
+        // Toggle existing form
+        const existingForm = card.querySelector('.inquiry-form');
+        if (existingForm) {
+          existingForm.remove();
+          return;
+        }
+
+        // Remove other open forms (optional but recommended)
+        document.querySelectorAll('.inquiry-form').forEach(f => f.remove());
+
+        // Determine price to show
+        const finalPrice =
+          Number(trip.Offer_Price) > 0 ? trip.Offer_Price : trip.Base_Price;
+
+        // Create inquiry form
+        const formDiv = document.createElement('div');
+        formDiv.className = 'inquiry-form';
+
+        formDiv.innerHTML = `
+          <p><strong>Trip:</strong> ${trip.Destination}</p>
+          <p><strong>Price:</strong> ₹${finalPrice}</p>
+
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Mobile Number" required />
+          <input type="text" placeholder="Area / District" required />
+
+          <button class="submit-inquiry-btn">Submit Inquiry</button>
+        `;
+
+        card.appendChild(formDiv);
+      });
     });
 
   } catch (err) {

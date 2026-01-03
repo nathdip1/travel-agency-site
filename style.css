@@ -34,3 +34,41 @@ h1, h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.inquiry-btn {
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.inquiry-btn:hover {
+  background-color: #0056b3;
+}
+.inquiry-form {
+  margin-top: 12px;
+  padding: 12px;
+  border-top: 1px dashed #ccc;
+}
+
+.inquiry-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.submit-inquiry-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
