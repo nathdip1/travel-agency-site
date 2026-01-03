@@ -1,11 +1,91 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 16px;
+/* Smooth scroll for anchor navigation */
+html {
+  scroll-behavior: smooth;
 }
 
-h1, h2 {
+/* =========================
+   GLOBAL THEME & TYPOGRAPHY
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #f4f1ec; /* warm off-white */
+  color: #2f2f2f; /* deep charcoal */
+  line-height: 1.6;
+}
+
+section {
+  padding: 16px;
+}
+
+h1, h2, h3 {
+  font-family: "Georgia", serif;
+  color: #3b2f2f; /* earthy brown */
   text-align: center;
 }
+
+h2 {
+  border-bottom: 2px solid #e0c097; /* soft saffron */
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  background-image: url('/banner.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 30, 15, 0.55); /* warm spiritual overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.hero-title {
+  color: #fff8e1; /* lamp glow */
+  font-size: 34px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  color: #fbe9c7;
+  font-size: 16px;
+  margin-bottom: 20px;
+  max-width: 340px;
+}
+
+.hero-btn {
+  background-color: #d17b0f; /* saffron gold */
+  color: #2b1b0f;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* =========================
+   TRIPS GRID
+   ========================= */
 
 #trips-container {
   display: grid;
@@ -13,86 +93,29 @@ h1, h2 {
   gap: 16px;
 }
 
-.trip-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  background: #fafafa;
-}
-
-.base-price {
-  font-weight: bold;
-}
-
-.offer-price {
-  color: green;
-  font-weight: bold;
-}
-
 @media (min-width: 768px) {
   #trips-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.inquiry-btn {
-  margin-top: 12px;
-  padding: 10px 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-  display: inline-block;
+
+
+/* =========================
+   TRIP CARD (PREMIUM PAPER)
+   ========================= */
+
+.trip-card {
+  background-color: #fffaf3;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid #e6dccf;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.inquiry-btn:hover {
-  background-color: #0056b3;
-}
-.inquiry-form {
-  margin-top: 12px;
-  padding: 12px;
-  border-top: 1px dashed #ccc;
-}
 
-.inquiry-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 6px 0;
-  font-size: 15px;
-}
-
-.submit-inquiry-btn {
-  margin-top: 10px;
-  padding: 10px 16px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.base-price {
-  font-weight: bold;
-}
-
-.base-price.strike {
-  text-decoration: line-through;
-  color: #888;
-}
-
-.offer-price {
-  font-weight: bold;
-  color: #2e7d32;
-}
-
-.discount-badge {
-  margin-left: 6px;
-  color: #d32f2f;
-  font-size: 14px;
-  font-weight: bold;
-}
+/* =========================
+   TRIP STATUS BADGES
+   ========================= */
 
 .trip-badge {
   display: inline-block;
@@ -110,15 +133,228 @@ h1, h2 {
 
 .trip-badge.closed {
   background-color: #fff3e0;
-  color: #ef6c00;
+  color: #bf6b00;
 }
 
 .trip-badge.soldout {
-  background-color: #ffebee;
-  color: #c62828;
+  background-color: #fdecea;
+  color: #b71c1c;
 }
 
 .trip-badge.completed {
-  background-color: #eceff1;
-  color: #455a64;
+  background-color: #ede7f6;
+  color: #4527a0;
+}
+
+
+/* =========================
+   PRICE STYLING
+   ========================= */
+
+.base-price {
+  font-weight: bold;
+  color: #4e342e;
+}
+
+.base-price.strike {
+  text-decoration: line-through;
+  color: #9e9e9e;
+}
+
+.offer-price {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+.discount-badge {
+  margin-left: 6px;
+  color: #b71c1c;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   INQUIRY BUTTON & FORM
+   ========================= */
+
+.inquiry-btn {
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #2f6f6b; /* calm teal */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.inquiry-btn:hover {
+  background-color: #245956;
+}
+
+.inquiry-form {
+  margin-top: 12px;
+  padding: 12px;
+  border-top: 1px dashed #cbbfae;
+}
+
+.inquiry-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #cbbfae;
+  background-color: #fffdf9;
+}
+
+.submit-inquiry-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #2f6f6b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.submit-inquiry-btn:hover {
+  background-color: #245956;
+}
+
+.form-status {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+
+/* =========================
+   PAGINATION
+   ========================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #bcae9e;
+  background-color: #fffdf9;
+  color: #3b2f2f;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   FOOTER (PREMIUM & TRUST)
+   ========================= */
+
+.site-footer {
+  background-color: #ded6c9;
+  padding: 24px 16px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: #3b2f2f;
+  font-size: 15px;
+}
+
+.footer-content h3 {
+  margin-bottom: 10px;
+}
+
+.footer-content a {
+  color: #5d4037;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Mandala Divider */
+.mandala-divider {
+  height: 40px;
+  margin: 24px 0;
+  background: radial-gradient(circle, #d8c3a5 12%, transparent 13%);
+  background-size: 18px 18px;
+  opacity: 0.35;
+}
+
+/* Use modern serif Google font */
+body, h1, h2, h3, p, a, button, input {
+  font-family: 'Merriweather', 'Georgia', serif;
+}
+
+/* Past Trips Gallery */
+.past-trips {
+  background-color: #f0ebe3;
+  padding: 24px 16px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Floating Contact Buttons */
+.floating-btn {
+  position: fixed;
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+
+.call-btn {
+  bottom: 90px;
+  background-color: #2f6f6b;
+}
+
+.whatsapp-btn {
+  bottom: 24px;
+  background-color: #25d366;
 }

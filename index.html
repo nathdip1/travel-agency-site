@@ -5,30 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yatra With Mohit</title>
 
-  <!-- Main Styles -->
+  <!-- Google Font (Modern Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- Site Header -->
-  <h1>Yatra With Mohit</h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1 class="hero-title">Yatra With Mohit</h1>
+      <p class="hero-subtitle">
+        Simple, trusted group journeys across India
+      </p>
+      <a href="#trips-section" class="hero-btn">
+        View Upcoming Trips
+      </a>
+    </div>
+  </section>
 
-  <!-- Upcoming Trips Section -->
+  <!-- Mandala Divider -->
+  <div class="mandala-divider"></div>
+
+  <!-- Upcoming Trips -->
   <section id="trips-section">
     <h2>Upcoming Trips</h2>
 
     <div id="trips-container">
       <p>Loading trips...</p>
     </div>
+
+    <div id="pagination" class="pagination"></div>
   </section>
 
-  <!-- No Trips Message -->
-  <section id="no-trips-section" style="display: none;">
-    <p id="no-trips-message"></p>
+  <!-- Past Trips Gallery -->
+  <section class="past-trips">
+    <h2>Past Journeys</h2>
+    <div class="gallery">
+      <img src="images/past-journey.jpeg" alt="Past trip 1">
+      <img src="images/past-journey1.jpeg" alt="Past trip 2">
+      <img src="images/past-journey2.jpeg" alt="Past trip 3">
+      <img src="images/past-journey3.jpeg" alt="Past trip 4">
+    </div>
   </section>
 
-  <!-- Main Script -->
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3>Contact Us</h3>
+      <p>
+        📍 Based in India<br />
+        ✉️ Email:
+        <a href="mailto:yatrawithmohit@gmail.com">yatrawithmohit@gmail.com</a><br />
+        📞 Phone:
+        <a href="tel:9876543210">+91 98765 43210</a>
+      </p>
+      <p class="footer-note">
+        © 2026 Yatra With Mohit. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <a href="tel:9876543210" class="floating-btn call-btn">📞</a>
+  <a href="https://wa.me/919876543210" target="_blank" class="floating-btn whatsapp-btn">💬</a>
+
   <script src="main.js"></script>
 
 </body>
