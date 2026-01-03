@@ -110,7 +110,13 @@
           <p><strong>Price:</strong> ₹${finalPrice}</p>
 
           <input type="text" placeholder="Your Name" />
-          <input type="tel" placeholder="Mobile Number" />
+          <input
+  type="tel"
+  placeholder="Mobile Number"
+  inputmode="numeric"
+  pattern="[0-9]*"
+  maxlength="10"
+/>
           <input type="text" placeholder="Area / District" />
 
           <button class="submit-inquiry-btn">Submit Inquiry</button>
@@ -132,11 +138,21 @@
             area: inputs[2].value.trim()
           };
 
-          if (!payload.name || !payload.mobile || !payload.area) {
-            statusEl.textContent = 'Please fill all details.';
-            statusEl.style.color = 'red';
-            return;
-          }
+          // Basic empty check
+if (!payload.name || !payload.mobile || !payload.area) {
+  statusEl.textContent = 'Please fill all details.';
+  statusEl.style.color = 'red';
+  return;
+}
+
+// Mobile number validation (exactly 10 digits)
+const mobileRegex = /^[0-9]{10}$/;
+
+if (!mobileRegex.test(payload.mobile)) {
+  statusEl.textContent = 'Please enter a valid 10-digit mobile number.';
+  statusEl.style.color = 'red';
+  return;
+}
 
           try {
             await fetch(API_BASE_URL, {
