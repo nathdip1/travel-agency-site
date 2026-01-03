@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 16px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+#trips-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.trip-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.base-price {
+  font-weight: bold;
+}
+
+.offer-price {
+  color: green;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  #trips-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

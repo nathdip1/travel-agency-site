@@ -4,12 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Travel Agency</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <h1>My Travel Agency</h1>
-  <p>Site initializing...</p>
+
+  <!-- Upcoming Trips Section -->
+  <section id="trips-section">
+    <h2>Upcoming Trips</h2>
+    <div id="trips-container">
+      <p>Loading trips...</p>
+    </div>
+  </section>
+
+  <!-- No Trips Message -->
+  <section id="no-trips-section" style="display: none;">
+    <p id="no-trips-message"></p>
+  </section>
 
   <script src="main.js"></script>
 </body>
+
 </html>
