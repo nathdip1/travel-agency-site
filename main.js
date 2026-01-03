@@ -33,21 +33,42 @@
       const card = document.createElement('div');
       card.className = 'trip-card';
 
-      const offerHtml =
-        Number(trip.Offer_Price) > 0
-          ? `<p class="offer-price">Offer Price: ₹${trip.Offer_Price}</p>`
-          : '';
+      const basePrice = Number(trip.Base_Price);
+const offerPrice = Number(trip.Offer_Price);
 
-      card.innerHTML = `
-        <h3>${trip.Destination}</h3>
-        <p><strong>Dates:</strong> ${formatDate(trip.Start_Date)} – ${formatDate(trip.End_Date)}</p>
-        <p><strong>Slots:</strong> ${trip.Remaining_Slots} / ${trip.Total_Slots}</p>
-        <p class="base-price">Price: ₹${trip.Base_Price}</p>
-        ${offerHtml}
-        <p>${trip.Notes || ''}</p>
+let priceHtml = '';
 
-        <button class="inquiry-btn">Inquiry Now</button>
-      `;
+if (offerPrice > 0 && offerPrice < basePrice) {
+  const discountPercent = Math.round(
+    ((basePrice - offerPrice) / basePrice) * 100
+  );
+
+  priceHtml = `
+    <p class="base-price strike">
+      Price: ₹${basePrice}/person
+    </p>
+    <p class="offer-price">
+      Offer Price: ₹${offerPrice}/person
+      <span class="discount-badge">(${discountPercent}% OFF)</span>
+    </p>
+  `;
+} else {
+  priceHtml = `
+    <p class="base-price">
+      Price: ₹${basePrice}/person
+    </p>
+  `;
+}
+
+card.innerHTML = `
+  <h3>${trip.Destination}</h3>
+  <p><strong>Dates:</strong> ${formatDate(trip.Start_Date)} – ${formatDate(trip.End_Date)}</p>
+  <p><strong>Slots:</strong> ${trip.Remaining_Slots} / ${trip.Total_Slots}</p>
+  ${priceHtml}
+  <p>${trip.Notes || ''}</p>
+  <button class="inquiry-btn">Inquiry Now</button>
+`;
+
 
       tripsContainer.appendChild(card);
 
@@ -140,3 +161,4 @@ function formatDate(dateStr) {
   const d = new Date(dateStr);
   return d.toLocaleDateString();
 }
+

@@ -72,3 +72,24 @@ h1, h2 {
   font-size: 15px;
   cursor: pointer;
 }
+
+.base-price {
+  font-weight: bold;
+}
+
+.base-price.strike {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.offer-price {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.discount-badge {
+  margin-left: 6px;
+  color: #d32f2f;
+  font-size: 14px;
+  font-weight: bold;
+}
